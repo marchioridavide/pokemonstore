@@ -1,0 +1,178 @@
+body{
+    background-image: url("sfondoindex.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-top:100px;
+    background-attachment: fixed;
+}
+
+.container{
+    background-color: rgba(39, 39, 39, 0.89);
+    margin: auto;
+    width: 50%;
+    border: 3px solid #1697af;
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+    min-height: 100px;
+    min-width: 500px;
+    padding-bottom: 30px;
+    text-align: center;
+    word-wrap: break-word;
+}
+.unown{
+    font-family: unown;
+    text-align: center;
+    font-size: 100px;
+}
+@font-face{
+    font-family:unown;
+    src: url(Unown.ttf);
+}
+button{
+    top:5px;
+    padding:10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    position: relative;
+    background-color: #1f88e3;
+    color: white;
+    font-weight: 600;
+    font-size: 30;
+    border-radius: 10px;
+    border-color: white;
+    box-shadow: 0;
+}
+button:hover{
+    background-color: white;
+    color: #1f88e3;
+    border-color: #1f88e3;
+    transition-duration: 0.4s;
+}
+.space{
+    font-size: 10px;
+}
+.inputtext{
+    border-color: #1697af;
+    border-radius: 5px;
+    padding: 5px;
+}
+.inputtext:focus{
+    color: white;
+    background-color: #1f88e3;
+    transition-duration: 0.3s;
+    border-color: white;
+    font-size: 20px;
+}
+.sub{
+    top:5px;
+    padding:10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    position: relative;
+    background-color: #1f88e3;
+    color: white;
+    font-weight: 600;
+    font-size: 30;
+    border-radius: 10px;
+    border-color: white;
+    box-shadow: 0;
+}
+.sub:hover{
+    background-color: white;
+    color: #1f88e3;
+    border-color: #1f88e3;
+    transition-duration: 0.4s;
+}
+#leest{
+    background-color: rgba(39, 39, 39, 0.89);
+    margin: auto;
+    width: 50%;
+    border: 3px solid #1697af;
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    min-height: 100px;
+    min-width: 500px;
+    padding-bottom: 30px;
+    word-wrap: break-word;
+}
+
+.navbarr{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+}
+
+.navbarr ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #32383e;
+    background-color: #32383e;
+    color:white;
+}
+
+.navbarr li{
+    float: left;
+    color:white;
+}
+
+.navbarr li a{
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color:white;
+}
+
+.navbarr li a:hover:not(active){
+    background-color: #454545;
+}
+
+.navbarr li a.active{
+    color: white;
+    background-color: #1697af;
+}
+.navbarr .mysearch[type=text]{
+    float: right;
+    border-color: #1697af;
+    border-radius: 5px;
+    padding: 5px;
+}
+.navbarr .mysearch[type=text]:focus{
+    float: right;
+     color: white;
+    background-color: #1f88e3;
+    transition-duration: 0.4s;
+    border-color: white;
+    font-size: 20px;
+}
+
+.subb{
+    background-color: #1f88e3;
+    font-size: 30;
+    border-radius: 10px;
+    border-color: white;
+    box-shadow: 0;
+    background-image: url("sw.png");
+    float: right;
+    color:white
+}
+.subb:hover{
+    background-color: white;
+    color: #1f88e3;
+    border-color: #1f88e3;
+    transition-duration: 0.4s;
+    background-image: url("bs.png");
+}
+.sprite{
+    max-height: 80px;
+    max-width: 80px;
+}
