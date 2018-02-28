@@ -8,8 +8,17 @@
         <div class="navbarr">
             <ul>
                 <li><a class="active" href="list.php">Catalog</a></li>
-                <li><a href="login.html">Log In</a></li>
-                <li><a href="sign.php">Sign Up</a></li>
+                <?php
+                    session_start();
+                    if (is_numeric($_SESSION['user_id']))
+                    {
+                        echo '<li><a href="logout.php">Log Out</a></li>';
+                    }
+                    else
+                    {
+                        echo '<li><a href="login.html">Log In</a></li><li><a href="sign.php">Sign Up</a></li>';
+                    }
+                ?>
                 <li><a href="#about">About</a></li>
                 <form action = "search.php" method = get>
                     
@@ -21,6 +30,16 @@
         <div id="leest">
             <?php
             
+                session_start();
+                echo "<br>";
+            
+                if(is_numeric($_SESSION['user_id']))
+                {
+                echo "<img src = 'main-sprites/user.png' class = 'sprite'>";
+                echo $_SESSION['user_name'];
+                echo "<br>";
+                echo "<br>";
+                }
                 
                 $x_pag = 10;
             
@@ -56,23 +75,61 @@
             
                 if ($all_pages > 1)
                 {
+                  echo "<br>";
+                  echo "<ul class = 'pagination justify-content-center'>";
+                    
                   if ($pag > 1)
                   {  
-                      echo "<a href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . ($pag - 1) . "\">";
-                      echo "Pagina Indietro</a>&nbsp;";
+                      echo "<li class = 'page-item'><a class = 'page-link' href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . ($pag - 1) . "\">";
+                      echo "Pagina Indietro</a></li>&nbsp;";
                   }
-
+                    
+                  
+                    
                   if ($all_pages > $pag)
                   {  
-                      echo "<a href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . ($pag + 1) . "\">";
-                      echo "Pagina Avanti</a>";
+                      echo "<li class = 'page-item'><a class = 'page-link' href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . ($pag + 1) . "\">";
+                      echo "Pagina Avanti</a></li>";
                   }
+                    
+                  echo "</ul>";
+                  echo "<br>";
                   echo "<br>";
                   
-                  for ($p=1; $p<=$all_pages; $p++) { //[13]
-                      echo "<a href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . $p . "\">";
-                      echo $p . "</a>&nbsp;";
+                  echo "<ul class = 'pagination justify-content-center'>";
+                  for ($p=1; $p<17; $p++) { //[13]
+                      echo "<li class='page-item'><a class ='page-link' href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . $p . "\">";
+                      echo $p . "</a></li>&nbsp;";
                   }
+                  echo "</ul>";
+                    
+                  echo "<ul class = 'pagination justify-content-center'>";
+                  for ($p=17; $p<=34; $p++) { //[13]
+                      echo "<li class='page-item'><a class ='page-link' href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . $p . "\">";
+                      echo $p . "</a></li>&nbsp;";
+                  }
+                  echo "</ul>";
+                    
+                  echo "<ul class = 'pagination justify-content-center'>";
+                  for ($p=34; $p<=51; $p++) { //[13]
+                      echo "<li class='page-item'><a class ='page-link' href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . $p . "\">";
+                      echo $p . "</a></li>&nbsp;";
+                  }
+                  echo "</ul>";
+                    
+                  echo "<ul class = 'pagination justify-content-center'>";
+                  for ($p=51; $p<=68; $p++) { //[13]
+                      echo "<li class='page-item'><a class ='page-link' href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . $p . "\">";
+                      echo $p . "</a></li>&nbsp;";
+                  }
+                  echo "</ul>";
+                    
+                  echo "<ul class = 'pagination justify-content-center'>";
+                  for ($p=68; $p<=78; $p++) { //[13]
+                      echo "<li class='page-item'><a class ='page-link' href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . $p . "\">";
+                      echo $p . "</a></li>&nbsp;";
+                  }
+                  echo "</ul>";
               }
             ?>
         </div>

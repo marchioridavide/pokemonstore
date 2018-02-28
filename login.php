@@ -10,6 +10,14 @@
     $sth = execute($query);
     
     $result = $sth->fetch(PDO::FETCH_ASSOC);
+
     $id = $result['id'];
-    header('Location: list.php');
+
+    session_start();
+    $_SESSION['user_id'] = $id;
+
+    $_SESSION['user_name'] = $user;
+
+    if (is_numeric($id)) header('Location: list.php');
+    
 ?>
