@@ -72,19 +72,17 @@
                       ."</td><td>" .$result['weight'] . "</td>";
                 }
                 echo "</table>";
+                echo "<br>";
             
-                if ($all_pages > 1)
+                if($all_pages > 1)
                 {
-                  echo "<br>";
-                  echo "<ul class = 'pagination justify-content-center'>";
+                    echo "<ul class = 'pagination justify-content-center'>";
                     
                   if ($pag > 1)
                   {  
                       echo "<li class = 'page-item'><a class = 'page-link' href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . ($pag - 1) . "\">";
                       echo "Pagina Indietro</a></li>&nbsp;";
                   }
-                    
-                  
                     
                   if ($all_pages > $pag)
                   {  
@@ -93,32 +91,26 @@
                   }
                     
                   echo "</ul>";
+                }
+            
+                echo "</div>";
+                echo "</br>";
+            
+                echo "<div class = 'pagebuttons'>";
+                if ($all_pages > 1)
+                {
                   echo "<br>";
                   echo "<br>";
                   
                   echo "<ul class = 'pagination justify-content-center'>";
-                  for ($p=1; $p<17; $p++) { //[13]
+                  for ($p=1; $p<34; $p++) { //[13]
                       echo "<li class='page-item'><a class ='page-link' href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . $p . "\">";
                       echo $p . "</a></li>&nbsp;";
                   }
                   echo "</ul>";
                     
                   echo "<ul class = 'pagination justify-content-center'>";
-                  for ($p=17; $p<=34; $p++) { //[13]
-                      echo "<li class='page-item'><a class ='page-link' href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . $p . "\">";
-                      echo $p . "</a></li>&nbsp;";
-                  }
-                  echo "</ul>";
-                    
-                  echo "<ul class = 'pagination justify-content-center'>";
-                  for ($p=34; $p<=51; $p++) { //[13]
-                      echo "<li class='page-item'><a class ='page-link' href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . $p . "\">";
-                      echo $p . "</a></li>&nbsp;";
-                  }
-                  echo "</ul>";
-                    
-                  echo "<ul class = 'pagination justify-content-center'>";
-                  for ($p=51; $p<=68; $p++) { //[13]
+                  for ($p=34; $p<=68; $p++) { //[13]
                       echo "<li class='page-item'><a class ='page-link' href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . $p . "\">";
                       echo $p . "</a></li>&nbsp;";
                   }
@@ -130,8 +122,9 @@
                       echo $p . "</a></li>&nbsp;";
                   }
                   echo "</ul>";
+                  echo "</div>";
+                  
               }
             ?>
-        </div>
     </body>
 </html> 

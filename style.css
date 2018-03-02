@@ -85,6 +85,7 @@ button:hover{
     border-color: #1f88e3;
     transition-duration: 0.4s;
 }
+
 #leest{
     background-color: rgba(39, 39, 39, 0.89);
     margin: auto;
@@ -140,12 +141,14 @@ button:hover{
     color: white;
     background-color: #1697af;
 }
+
 .navbarr .mysearch[type=text]{
     float: right;
     border-color: #1697af;
     border-radius: 5px;
     padding: 5px;
 }
+
 .navbarr .mysearch[type=text]:focus{
     float: right;
      color: white;
@@ -165,6 +168,7 @@ button:hover{
     float: right;
     color:white
 }
+
 .subb:hover{
     background-color: white;
     color: #1f88e3;
@@ -172,7 +176,21 @@ button:hover{
     transition-duration: 0.4s;
     background-image: url("bs.png");
 }
+
 .sprite{
     max-height: 80px;
     max-width: 80px;
+}
+.pagebuttons{
+    background-color: rgba(39, 39, 39, 0.89);
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    min-height: 100px;
+    min-width: 500px;
+    padding-bottom: 30px;
+    word-wrap: break-word;
 }

@@ -19,7 +19,7 @@
         $query = "insert into users (nome,cognome,mail,password,username) VALUES ('$nome','$cognome','$email','$pass','$user')";
         echo $query;
         insert($query);
-        header('Location: login.html')
+        header('Location: login.html');
     }else{
         echo 'password non conforme';
     }

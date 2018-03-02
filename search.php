@@ -8,8 +8,17 @@
         <div class="navbarr">
             <ul>
                 <li><a class="active" href="list.php">Catalog</a></li>
-                <li><a href="login.html">Log In</a></li>
-                <li><a href="sign.php">Sign Up</a></li>
+                <?php
+                    session_start();
+                    if (is_numeric($_SESSION['user_id']))
+                    {
+                        echo '<li><a href="logout.php">Log Out</a></li>';
+                    }
+                    else
+                    {
+                        echo '<li><a href="login.html">Log In</a></li><li><a href="sign.php">Sign Up</a></li>';
+                    }
+                ?>
                 <li><a href="#about">About</a></li>
                 <form action = "search.php" method = "get">
                     
@@ -20,6 +29,17 @@
         </div>
         <div id="leest">
             <?php
+            
+                session_start();
+                echo "<br>";
+            
+                if(is_numeric($_SESSION['user_id']))
+                {
+                echo "<img src = 'main-sprites/user.png' class = 'sprite'>";
+                echo $_SESSION['user_name'];
+                echo "<br>";
+                echo "<br>";
+                }
             
                 $word = $_GET['searchbox'];
             
