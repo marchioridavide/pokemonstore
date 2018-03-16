@@ -48,9 +48,24 @@
                             
                 $res = execute($sql);
                 $result = $res->fetch(PDO::FETCH_ASSOC);
+            
+                echo "Normal form (HG/SS): <br>" ;
+                echo "<img src = 'main-sprites/".$result['id'].".png' class = 'sprite'><br>";
+            
+                echo "<br>";
                 
-                echo "Shiny form: <br>" ;
-                echo "<img src = 'main-sprites/shiny/".$result['id'].".png'>";
+                echo "Shiny form (HG/SS): <br>" ;
+                echo "<img src = 'main-sprites/shiny/".$result['id'].".png' class = 'sprite'><br>";
+            
+                echo "<br>";
+            
+                echo "Back form (B/W): <br>" ;
+                echo "<img src = 'back/".$result['id'].".png' class = 'sprite'><br>";
+            
+                echo "<br>";
+                
+                echo "Back shiny form (B/W): <br>" ;
+                echo "<img src = 'back-shiny/".$result['id'].".png' class = 'sprite'><br>";
             
             ?>
         </div>

@@ -23,7 +23,7 @@
             <input type= "password" name ="password", placeholder="Password" class = "inputtext"><br><div class="space"><br></div>
             <input type= "password" name ="passconf", placeholder="Conferma Password" class = "inputtext"><br>
             <div class="space"><br><br></div>
-            <input type="submit" class="sub" name="conferma" value="Conferma">
+            <input type="submit" class="sub" name="conferma" value="Submit">
             </form>
         </div>
     </body>

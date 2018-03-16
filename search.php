@@ -48,10 +48,11 @@
             
                 $sth = execute("SELECT * FROM pokemon where pokemon.identifier like '%$word%'");
             
-                echo "<table class ='table table-dark'><tr><th>Photo</th><th>name</th><th>height</th><th>weight</th></tr>";
+                echo "<table class ='table table-dark'><tr><th>ID</th><th>Photo</th><th>name</th><th>height</th><th>weight</th></tr>";
                 while($result = $sth->fetch(PDO::FETCH_ASSOC))
                 {
-                  echo "<tr><td>"."<img src='main-sprites/".$result['id'].".png' class='sprite'></td><td>" .$result['identifier']. "</td><td>" . $result['height']
+                  $id = $result['id'];
+                  echo "<tr><form action = 'details.php' method = 'get'><td><input type ='hidden' name = 'poketd' value = $id>".$result['id']."</td><td>"."<input type ='image' src='main-sprites/".$result['id'].".png' class='sprite' alt='Submit Form' /></td></form><td>" .$result['identifier']. "</td><td>" . $result['height']
                       ."</td><td>" .$result['weight'] . "</td>";
                 }
                 echo "</table>";

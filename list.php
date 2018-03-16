@@ -82,13 +82,13 @@
                   if ($pag > 1)
                   {  
                       echo "<li class = 'page-item'><a class = 'page-link' href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . ($pag - 1) . "\">";
-                      echo "Pagina Indietro</a></li>&nbsp;";
+                      echo "Back</a></li>&nbsp;";
                   }
                     
                   if ($all_pages > $pag)
                   {  
                       echo "<li class = 'page-item'><a class = 'page-link' href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . ($pag + 1) . "\">";
-                      echo "Pagina Avanti</a></li>";
+                      echo "Next</a></li>";
                   }
                     
                   echo "</ul>";
