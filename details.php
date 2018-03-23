@@ -48,6 +48,8 @@
                             
                 $res = execute($sql);
                 $result = $res->fetch(PDO::FETCH_ASSOC);
+                $id = $result['id'];
+                $identifier = $result['identifier'];
             
                 echo "Normal form (HG/SS): <br>" ;
                 echo "<img src = 'main-sprites/".$result['id'].".png' class = 'sprite'><br>";
@@ -67,6 +69,15 @@
                 echo "Back shiny form (B/W): <br>" ;
                 echo "<img src = 'back-shiny/".$result['id'].".png' class = 'sprite'><br>";
             
+                
+                echo "
+                    <form action = 'cart.php' method = 'get'>
+                        <input type = 'hidden' name = 'id_poke' value = $id >
+                        <input type = 'hidden' name = 'ide_poke' value = $identifier >
+                        <input type = 'number' name = 'qty'><br>
+                        <input type = 'button' value = 'add to cart'>
+                    </form>
+                "
             ?>
         </div>
     </body>

@@ -192,5 +192,5 @@ button:hover{
     min-height: 100px;
     min-width: 500px;
     padding-bottom: 30px;
-    word-wrap: break-word;
+    overflow:scroll;
 }
