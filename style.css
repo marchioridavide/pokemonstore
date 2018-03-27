@@ -192,5 +192,18 @@ button:hover{
     min-height: 100px;
     min-width: 500px;
     padding-bottom: 30px;
-    overflow:scroll;
+    word-wrap: break-word;
+}
+.navbutt{
+    background-color: #ffffff;
+    border:0px;
+    border-radius: 10px;
+    color: #1f88e3;
+    margin: 5px;
+}
+.navbutt:hover{
+    background-color: #1f88e3;
+    color:white;
+    transition-duration: 0.4s;
+    cursor: pointer;
 }

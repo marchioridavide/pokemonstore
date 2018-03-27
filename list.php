@@ -104,26 +104,11 @@
                   echo "<br>";
                   echo "<br>";
                   
-                  echo "<ul class = 'pagination'>";
-                  for ($p=1; $p<34; $p++) { //[13]
-                      echo "<li class='page-item'><a class ='page-link' href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . $p . "\">";
-                      echo $p . "</a></li>&nbsp;";
+                  for ($p=1; $p<$all_pages; $p++) { //[13]
+                      echo "<a href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . $p . "\">";
+                      echo"<button class='navbutt'>". $p . "</button></a>&nbsp;";
                   }
-                  echo "</ul>";
-                    
-                  echo "<ul class = 'pagination'>";
-                  for ($p=34; $p<=68; $p++) { //[13]
-                      echo "<li class='page-item'><a class ='page-link' href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . $p . "\">";
-                      echo $p . "</a></li>&nbsp;";
-                  }
-                  echo "</ul>";
-                    
-                  echo "<ul class = 'pagination'>";
-                  for ($p=68; $p<=78; $p++) { //[13]
-                      echo "<li class='page-item'><a class ='page-link' href=\"" . $_SERVER['PHP_SELF'] . "?pag=" . $p . "\">";
-                      echo $p . "</a></li>&nbsp;";
-                  }
-                  echo "</ul>";
+                  
                   echo "</div>";
                   
               }
