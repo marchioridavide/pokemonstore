@@ -177,6 +177,22 @@ button:hover{
     background-image: url("bs.png");
 }
 
+.del{
+    background-color: #1f88e3;
+    border-radius: 5px;
+    border-color: white;
+    box-shadow: 0;
+    background-image: url("sw.png");
+    color:white;
+}
+
+.del:hover{
+    background-color: white;
+    color: #1f88e3;
+    border-color: #1f88e3;
+    transition-duration: 0.4s;
+    background-image: url("bs.png");
+}
 .sprite{
     max-height: 80px;
     max-width: 80px;

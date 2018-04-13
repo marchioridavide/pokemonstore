@@ -13,6 +13,7 @@
                     if (is_numeric($_SESSION['user_id']))
                     {
                         echo '<li><a href="logout.php">Log Out</a></li>';
+                        echo '<li><a href="showcart.php">Cart</a></li>';
                     }
                     else
                     {
@@ -50,6 +51,7 @@
                 $result = $res->fetch(PDO::FETCH_ASSOC);
                 $id = $result['id'];
                 $identifier = $result['identifier'];
+                $price = $result['base_experience'];
             
                 echo "Normal form (HG/SS): <br>" ;
                 echo "<img src = 'main-sprites/".$result['id'].".png' class = 'sprite'><br>";
@@ -70,14 +72,16 @@
                 echo "<img src = 'back-shiny/".$result['id'].".png' class = 'sprite'><br>";
             
                 
-                echo "
-                    <form action = 'cart.php' method = 'get'>
+                if (isset($_SESSION['user_id'])) echo "
+                    <form action = 'cart.php' method = 'post'>
                         <input type = 'hidden' name = 'id_poke' value = $id >
                         <input type = 'hidden' name = 'ide_poke' value = $identifier >
+                        <input type = 'hidden' name = 'cost_poke' value = $price >
                         <input type = 'number' name = 'qty'><br>
-                        <input type = 'button' value = 'add to cart'>
+                        $price $ each<br><br>
+                        <input type = 'submit' value = 'add to cart' class = 'del'>
                     </form>
-                "
+                ";
             ?>
         </div>
     </body>

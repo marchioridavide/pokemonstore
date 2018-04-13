@@ -13,6 +13,7 @@
                     if (is_numeric($_SESSION['user_id']))
                     {
                         echo '<li><a href="logout.php">Log Out</a></li>';
+                        echo '<li><a href="showcart.php">Cart</a></li>';
                     }
                     else
                     {

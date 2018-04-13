@@ -13,6 +13,7 @@
                     if (is_numeric($_SESSION['user_id']))
                     {
                         echo '<li><a href="logout.php">Log Out</a></li>';
+                        echo '<li><a href="showcart.php">Cart</a></li>';
                     }
                     else
                     {
@@ -65,12 +66,21 @@
                 $first = ($pag-1) * $x_pag;
                 $sth = execute("SELECT * FROM pokemon LIMIT $first, $x_pag");
             
-                echo "<table class ='table table-dark'><tr><th>ID</th><th>Photo</th><th>name</th><th>height</th><th>weight</th></tr>";
+                echo "<table class ='table table-dark'><tr><th>ID</th><th>Photo</th><th>name</th><th>height</th><th>weight</th><th>Price</th></tr>";
                 while($result = $sth->fetch(PDO::FETCH_ASSOC))
                 {
-                  $id = $result['id'];
-                  echo "<tr><form action = 'details.php' method = 'get'><td><input type ='hidden' name = 'poketd' value = $id>".$result['id']."</td><td>"."<input type ='image' src='main-sprites/".$result['id'].".png' class='sprite' alt='Submit Form' /></td></form><td>" .$result['identifier']. "</td><td>" . $result['height']
-                      ."</td><td>" .$result['weight'] . "</td>";
+                    if($result['base_experience'] != 0)
+                    {
+                          $id = $result['id'];
+                          echo "<tr><form action = 'details.php' method = 'get'><td><input type ='hidden' name = 'poketd' value = $id>".$result['id']."</td><td>"."<input type ='image' src='main-sprites/".$result['id'].".png' class='sprite' alt='Submit Form' /></td></form><td>" .$result['identifier']. "</td><td>" . $result['height']
+                              ."</td><td>" .$result['weight'] . "</td><td>" .$result['base_experience']." $</td>";
+                    }
+                    else
+                    {
+                        $id = $result['id'];
+                          echo "<tr><form action = 'details.php' method = 'get'><td><input type ='hidden' name = 'poketd' value = $id>".$result['id']."</td><td>"."<input type ='image' src='main-sprites/".$result['id'].".png' class='sprite' alt='Submit Form' /></td></form><td>" .$result['identifier']. "</td><td>" . $result['height']
+                              ."</td><td>" .$result['weight'] . "</td><td>∞ $</td>";
+                    }
                 }
                 echo "</table>";
                 echo "<br>";

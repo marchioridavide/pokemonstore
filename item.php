@@ -13,14 +13,27 @@
             $this->qty = $qty;
             $this->price = $price;
         }
-        function printItemAsTr()  //[1]
+        function printItemAsTr()  //stamparlo in tabella
         {
-            echo " <td> ". $this->identifier . "</td><td>" . $this->price . "</td><td>" . $this->qty ."</td>";
+            echo " <td> ". $this->identifier . "</td><td>" . $this->price . " $</td><td>" . $this->qty ."</td>";
         }
-        function  printItem() //usefull for debugging
+        function getID()
         {
-            echo $this->id. " ". $this->identifier. " " . $this->price . " " . $this->qty;
+            return $this->id;
         }
+        function getPrice()
+        {
+            return $this->price;
+        }
+        function getqty()
+        {
+            return $this->qty;
+        }
+        function add($q)
+        {
+            $this->qty += 1;
+        }
+        
 
     }
 ?>

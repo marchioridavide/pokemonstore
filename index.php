@@ -20,12 +20,6 @@
                         echo '<li><a href="login.html">Log In</a></li><li><a href="sign.php">Sign Up</a></li>';
                     }
                 ?>
-                <li><a href="#about">About</a></li>
-                <form action = "search.php" method = get>
-                    
-                    <input type='text' class='mysearch' name ='searchbox' placeholder="Search...">
-                    
-                </form>
             </ul> 
         </div>
         <div class="container">
