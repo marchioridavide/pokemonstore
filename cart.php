@@ -12,6 +12,7 @@
     }
     else
     {
+        echo(count($_SESSION['cart_items']));
         foreach($_SESSION['cart_items'] as $key => $item)
         {
             $itm = unserialize($item);

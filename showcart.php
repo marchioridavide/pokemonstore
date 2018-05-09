@@ -10,6 +10,25 @@
                 <li><a class="active" href="list.php">Catalog</a></li>
                 <?php
                     session_start();
+                    include('item.php');
+                    include('dbhelper.php');
+                    if (isset($_POST['type']) & $_POST['type'] == 'editqty')
+                    {
+                        $tempid = $_POST['pokeid'];
+                        $newqty = $_POST['qty'];
+                        
+                            foreach($_SESSION['cart_items'] as $key => $item)
+                            {
+                                $itm = unserialize($item);
+                                if($itm->getID() == $tempid)
+                                {
+                                    $poke = new Item($tempid, $_POST['pokeident'], $_POST['pokeprice'],    $newqty);
+                                    $product = serialize($poke); unset($_SESSION['cart_items'][$key]);
+                                }
+                            }
+                          array_push($_SESSION['cart_items'], $product); 
+                        
+                    }
                     if (is_numeric($_SESSION['user_id']))
                     {
                         echo '<li><a href="logout.php">Log Out</a></li>';
@@ -27,8 +46,6 @@
         <div id = "leest">
         <div class = "unown">Cart</div>
         <?php
-            include('item.php');
-            include('dbhelper.php');
             session_start();
             
             printcart();
